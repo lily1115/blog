@@ -1,0 +1,29 @@
+html *{
+  box-sizing:border-box;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  outline: 0;
+  text-size-adjust: none;
+}
+html,body{
+  background-color: #f1f1f1;
+}
+body{
+  width: 100%;/*设计稿大小*/
+  line-height: 1.5;
+  margin:0 auto;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+a{
+  text-decoration: none;
+  display:block;
+}
+input[type="password"],input[type="text"],input[type="button"],input[type="submit"],input[type="reset"],input[type="file"]::-webkit-file-upload-button,button,select,textarea{
+  -webkit-appearance:none;
+  appearance:none;
+  border: none;
+  border-radius: 0;
+}
+img, embed, object, video, iframe {
+  max-width:100% !important;
+}
