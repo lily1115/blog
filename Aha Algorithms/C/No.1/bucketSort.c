@@ -8,13 +8,11 @@ int main ()
     a[i] = 0;
   }
 
-  
   for(i = 1; i <= 5; i++)
   {
     scanf("%d", &t);
     a[t]++;
   }
-
   
   for(i = 0; i <= 10; i++)
     for(j = 1; j <= a[i]; j++)
@@ -22,9 +20,7 @@ int main ()
     
   // getchar();
   // getchar();
-    
   // getchar() 用来暂停程序，以便查看程序输出的内容;
   // 也可以用system("pause")；等来代替
   return 0;
-  
 }
