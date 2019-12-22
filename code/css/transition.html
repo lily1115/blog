@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="reset.css">
+  <style>
+    .demo-hover ul.fill li {
+      position: relative;
+      float: left;
+      width: 100px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      background-color: orange;
+    }
+
+    .demo-hover ul.fill li a {
+      display: block;
+      width: 100px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+    }
+
+    .ul-transition {
+      width: 100%;
+      position: absolute;
+      top: 30px;
+      left: 0;
+      transform: scaleY(0);
+      transform-origin: 0 0;
+      transition: all .5s;
+    }
+
+    .demo-hover li:hover .ul-transition {
+      transform: scaleY(1);
+    }
+
+    .demo-hover li .ul-transition li {
+      width: 100px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      background: #0099ff;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="demo-hover">
+    <ul class="fill">
+      <li>
+        <a href="javascript:;">html</a>
+        <ul class="ul-transition">
+          <li><a href="javascript:;">div</a></li>
+          <li><a href="javascript:;">p</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="javascript:;">javascript</a>
+        <ul class="ul-transition">
+          <li><a href="javascript:;">Object</a></li>
+          <li><a href="javascript:;">Array</a></li>
+          <li><a href="javascript:;">function</a></li>
+          <li><a href="javascript:;">Number</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="javascript:;">css</a>
+        <ul class="ul-transition">
+          <li><a href="javascript:;">transition</a></li>
+          <li><a href="javascript:;">animation</a></li>
+          <li><a href="javascript:;">transform</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="javascript:;">框架</a>
+        <ul class="ul-transition">
+          <li><a href="javascript:;">vue</a></li>
+          <li><a href="javascript:;">react</a></li>
+          <li><a href="javascript:;">angular</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</body>
+
+</html>

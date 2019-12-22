@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>在固定div中拖拽</title>
+  <link ref="stylesheet" href="reset.css">
+  <style>
+    #big {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      border: 1px solid red;
+    }
+
+    #small {
+      position: absolute;
+      background: #99CC00;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="big">
+    <div id="small" onmousedown="startMove(event)"></div>
+  </div>
+  <script>
+
+    function startMove(e) {
+      var oBig = document.getElementById('big')
+      var oSmall = document.getElementById('small')
+      var e = e || window.event
+      // 获取小方块 拖拽前的位置
+      oSmall.startX = e.clientX - oSmall.offsetLeft
+      oSmall.startY = e.clientY - oSmall.offsetTop
+      document.onmousemove = function (e) {
+        var e = e || window.event
+        var left = e.clientX - oSmall.startX
+        var top = e.clientY - oSmall.startY
+        oSmall.style.left = left + 'px'
+        oSmall.style.top = top + 'px'
+        if (left <= 0) {
+          oSmall.style.left = 0 + 'px'
+        }
+        if (left >= 250) {
+          oSmall.style.left = 250 + 'px'
+        }
+        if (top <= 0) {
+          oSmall.style.top = 0 + 'px'
+        }
+        if (top >= 250) {
+          oSmall.style.top = 250 + 'px'
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>

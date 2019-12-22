@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="content">
+    1、答案区域监听copy事件，并阻止这个事件的默认行为。
+    2、获取选中的内容（window.getSelection()）加上版权信息，然后设置到剪切板（clipboarddata.setData()）。
+    1、答案区域监听copy事件，并阻止这个事件的默认行为。
+    2、获取选中的内容（window.getSelection()）加上版权信息，然后设置到剪切板（clipboarddata.setData()）。
+    1、答案区域监听copy事件，并阻止这个事件的默认行为。
+    2、获取选中的内容（window.getSelection()）加上版权信息，然后设置到剪切板（clipboarddata.setData()）。
+    1、答案区域监听copy事件，并阻止这个事件的默认行为。
+    2、获取选中的内容（window.getSelection()）加上版权信息，然后设置到剪切板（clipboarddata.setData()）。
+  </div>
+  <script>
+    document.oncopy = addLink;
+    function addLink() {
+      let selObj = window.getSelection();
+      var selectedText = selObj.toString();
+      var newStr = 'my name is lily' + selectedText
+
+      var locationHref = document.location.href;
+      var appendLink = "\r\n\r\n 原文出自[ 范文皓的个人博客 ] 转载请保留原文链接: <a href='" + locationHref + "'>" + locationHref + "</a>";
+      var copytext = selectedText + appendLink;
+      if (window.clipboardData) { // Internet Explorer
+        window.clipboardData.setData("Text", copytext);
+        return false;
+      } else {
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        document.body.appendChild(newdiv);
+        newdiv.innerHTML = copytext;
+        selObj.selectAllChildren(newdiv);
+        window.setTimeout(function () {
+          document.body.removeChild(newdiv);
+        }, 0);
+      }
+    }
+
+  </script>
+</body>
+
+</html>
